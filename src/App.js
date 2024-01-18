@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Input, Progress, Result, Spin } from 'antd';
+import { Input, Progress, Result, Spin, Image } from 'antd';
 import './App.css';
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,13 +10,18 @@ import {
 const App = () => {
   const [nama, setNama] = useState('');
   const [hasil, setHasil] = useState(null);
-  const [teksHasil, setTeksHasil] = useState(null);
+  const [color, setColor] = useState(null);
   const [loading, setLoading] = useState(false);
+  const TeksHasil = () =>{
+    if(color === 'success')return 'good';
+    else if (color === 'warning')return 'ok';
+    else return 'bad';
+  }
 
   const twoColors = {
-    '0%': '#FF8076',
+    '100%': '#FF8076',
     '50%': '#FFEA76',
-    '100%': '#4AFF91',
+    '0%': '#4AFF91',
   };
 
   useEffect(() => {
@@ -40,11 +45,11 @@ const App = () => {
       const persentaseBaik = hash(nama);
       setHasil(persentaseBaik);
       if(persentaseBaik > 200/3){
-        setTeksHasil('good')
+        setColor('success')
       }else if(persentaseBaik <200/3 && persentaseBaik >100/3){
-        setTeksHasil('ok')
+        setColor('warning')
       }else{
-        setTeksHasil('bad');
+        setColor('danger');
       }
       
       // Tambahkan delay sebelum loading dihilangkan (contoh: 2 detik)
@@ -57,10 +62,11 @@ const App = () => {
   }, [nama]);
 
   return (
-    <div className="App">
-      <div className='container p-2 mt-5'>
-      <div className='border p-5'>
-      <h1 className='mb-5'>?</h1>
+    <div className="App bg-secondary bg-opacity-25">
+      <div className='p-2 d-flex align-items-center justify-content-center' style={{height:'100vh'}}>
+      <div className='border p-5 container bg-light rounded'>
+      <h1 className='fw-bold'>Title</h1>
+      <h3 className='mb-5 text-secondary fw-light'>subtitle</h3>
       <Input
         placeholder="Tulis Nama"
         value={nama}
@@ -75,11 +81,12 @@ const App = () => {
         hasil !== null && (
           <>
           <Progress percent={hasil} className="rounded-0" size={['default', 30]} format={(percent) => percent} strokeColor={twoColors}/>
-          <div className='row fw-bold mt-2'>
-            <span className='col text-start text-danger'>bad</span>
-            <span className='col text-end text-success'>good</span>
+          <div className='row fw-bold mt-2 '>
+            <span className='col text-start text-success'>good</span>
+            <span className='col text-end text-danger'>bad</span>
           </div>
-          <h1>{teksHasil}</h1>
+          <h1 className={`text-${color}`}><TeksHasil/></h1>
+          <Image src='logo192.png' preview={false}/>
           </>
         )
       )}
