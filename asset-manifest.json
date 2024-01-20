@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/tes-persen/static/css/main.80ae47ea.css",
+    "main.js": "/tes-persen/static/js/main.63dafc66.js",
+    "static/js/787.412a20fb.chunk.js": "/tes-persen/static/js/787.412a20fb.chunk.js",
+    "index.html": "/tes-persen/index.html",
+    "main.80ae47ea.css.map": "/tes-persen/static/css/main.80ae47ea.css.map",
+    "main.63dafc66.js.map": "/tes-persen/static/js/main.63dafc66.js.map",
+    "787.412a20fb.chunk.js.map": "/tes-persen/static/js/787.412a20fb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.80ae47ea.css",
+    "static/js/main.63dafc66.js"
+  ]
+}
