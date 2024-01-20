@@ -37,21 +37,22 @@ const App = () => {
         return Math.abs(hashValue % 101); // Ambil nilai mutlak dan batasi ke rentang 0-100
       };
       
-      const persentaseBaik = hash(nama);
-      setHasil(persentaseBaik);
-      if(persentaseBaik > 80){
+      const persentaseKarbit = hash(nama);
+      setHasil(persentaseKarbit);
+
+      if(persentaseKarbit >= 80){
         setTeksHasil('bit karbittt... Raja karbit Dewa karbit bit... bit...')
         setColor('dark');
         setImage('5.jpeg');
-      }else if(persentaseBaik <80 && persentaseBaik >60){
+      }else if(persentaseKarbit <80 && persentaseKarbit >= 60){
         setTeksHasil('ini dia Raja karbit');
         setColor('danger');
         setImage('4.jpeg')
-      }else if(persentaseBaik <60 && persentaseBaik >40){
+      }else if(persentaseKarbit <60 && persentaseKarbit >= 40){
         setTeksHasil('Lu karbit');
         setColor('danger');
         setImage('3.jpeg');
-      }else if(persentaseBaik <40 && persentaseBaik >20){
+      }else if(persentaseKarbit <40 && persentaseKarbit >= 20){
         setTeksHasil('Kok kamu karbit bang?')
         setColor('warning');
         setImage('2.jpeg')
