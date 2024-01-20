@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.13.1",
     "bootstrap": "^5.3.2",
+    "gh-pages": "^6.1.1",
     "hash": "^0.2.1",
     "npm": "^10.3.0",
     "react": "^18.2.0",
@@ -20,7 +21,7 @@
   "homepage": "https://rizalalfadlil.github.io/bit",
   "scripts": {
     "predeploy": "npm run build",
-   "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
