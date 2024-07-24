@@ -80,7 +80,7 @@ const App = () => {
         onChange={(e) => setNama(e.target.value)}
         style={{ marginBottom: '16px' }}
       />
-      <Button type='primary' disabled={nama == ''} className='rounded-pill' onClick={hitungKesejahteraan}>Hitung</Button>
+      <Button type='primary' disabled={nama.length < 3} className='rounded-pill' onClick={hitungKesejahteraan}>{(nama.length < 3 && nama !=="")?"minimal 3 karakter":"hitung"}</Button>
       </div>
       <div className='mt-3'>
       {loading ? (
